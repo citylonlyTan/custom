@@ -1,3 +1,15 @@
+[Config]
+# 强行指定自定义的完整的 DNS 模块与底层参数，防止被 sublink-pro 默认覆盖
+# 开启增强模式与防泄露配置
+skip_cert_verify=true
+keep_alive_interval=15
+
+[custom]
+overwrite_original_rules=true
+
+# --- 以下为强行注入的顶层 dns 模块（完整还原七尺宇无泄露配置） ---
+# 注意：在 INI 语法中，如果需要注入整块 YAML，可以利用 custom_settings 或直接通过 subconverter 的自定义配置段。
+# 如果 sublink-pro 提供了“自定义配置/附加 YAML”输入框，直接把下面的 DNS 块贴进去是最稳妥的。
 [custom]
 ; 七尺宇无泄露防泄露 + sublink-pro 专用转换模板
 ; 保持自定义规则优先
